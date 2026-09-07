@@ -8,6 +8,8 @@ services:
    - --collation-server=utf8mb4_bin
 # Only during upgrade from versions prior 6.4 and new installations (schema deployment)
    - --log_bin_trust_function_creators=1
+# Added by Masoud Maghsoudi - Set binlog-expire-logs-expire to prevent storage overflow
+   - --binlog-expire-logs-seconds=3600
 # Use TLS encryption for connections to database
 #   - --require-secure-transport
 #   - --ssl-ca=/run/secrets/root-ca.pem
